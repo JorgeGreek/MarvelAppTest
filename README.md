@@ -29,7 +29,10 @@ app- This is where all the business logic of the application is.
 6) - DESIGN PATTERN    
 MVVM (Model View View Model) is used as Patern Design, with livedatas and stateFlows
 
-7) - LIBRARIES  
+7) - TESTING  
+Only Unit Testing in usecase & data layers with mockito & Junit
+
+8) - LIBRARIES  
 Retrofit- Necessary for communication between the App and the endpoints
 Timber- for Logs
 Glide- One of the options to visualize the collected images as url from the endpoin (more options would be "picaso" or "coil")
