@@ -32,6 +32,9 @@ MVVM (Model View View Model) is used as Patern Design, with livedatas and stateF
 7) - TESTING  
 Only Unit Testing in usecase & data layers with mockito & Junit
 
+8) - DEPENDENCE INJECTION  
+With Dagger Hilt from Jetpack 
+
 8) - LIBRARIES  
 Retrofit- Necessary for communication between the App and the endpoints
 Timber- for Logs
