@@ -1,0 +1,11 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+}
+
+dependencies {
+    implementation project (":domain")
+
+    implementation kotlinLibs.values()
+    testImplementation testLibsForAllModules.values()
+}

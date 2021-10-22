@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MarvelAppTest</string>
+
+    <string name="hero_image">Hero image</string>
+    <string name="timeout">It looks like the server is taking too long to respond, please try again in some time</string>
+    <string name="try_again">Try again</string>
+    <string name="character_image">Character image</string>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.test.marvelapptest">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:name=".App"
+        android:icon="@drawable/logo_red"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo_red"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MarvelAppTest.NoActionBar"
+        android:fullBackupContent="false">
+        <activity
+            android:name=".ui.home.HomeActivity"
+            android:theme="@style/Theme.MarvelAppTest.NoActionBar"
+            android:exported="true" />
+        <activity
+            android:name=".ui.detail.DetailActivity"
+            android:theme="@style/Theme.MarvelAppTest.NoActionBar"
+            android:parentActivityName=".ui.home.HomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:theme="@style/Theme.MarvelAppTest.NoActionBar"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

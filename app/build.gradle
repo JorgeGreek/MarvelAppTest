@@ -1,0 +1,87 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+def secretProperties() {
+    def file = file("secret.properties")
+    def properties = new Properties()
+    properties.load(new FileInputStream(file))
+    return properties
+}
+
+android {
+    compileSdk 30
+
+    defaultConfig {
+        applicationId "com.test.marvelapptest"
+        minSdk 26
+        targetSdk 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.HiltTestRunner"
+    }
+
+    def MARVEL_API_KEY = 'MARVEL_API_KEY'
+    def MARVEL_PRIVATE_KEY = 'MARVEL_PRIVATE_KEY'
+
+    def apikey = secretProperties()[MARVEL_API_KEY]
+    def privatekey = secretProperties()[MARVEL_PRIVATE_KEY]
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            buildConfigField("String", MARVEL_API_KEY, "\"" + apikey + "\"")
+            buildConfigField("String", MARVEL_PRIVATE_KEY, "\"" + privatekey + "\"")
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            buildConfigField("String", MARVEL_API_KEY, "\"" + apikey + "\"")
+            buildConfigField("String", MARVEL_PRIVATE_KEY, "\"" + privatekey + "\"")
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    // Intern Modules
+    implementation project(":data")
+    implementation project(":domain")
+    implementation project(":usecase")
+
+    implementation androidLibs.values()
+    implementation kotlinLibs.values()
+    implementation libs.values()
+    kapt androidKaptLibs.values()
+
+    testImplementation testLibsForAllModules.values()
+    testImplementation testLibsForApp.values()
+    androidTestImplementation androidTestLibs.values()
+    androidTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.1") {
+        // conflicts with mockito due to direct inclusion of byte buddy
+        exclude group: "org.jetbrains.kotlinx", module: "kotlinx-coroutines-debug"
+    }
+    kaptTest kaptTestLibs.values()
+    kaptAndroidTest kaptAndroidTestLibs.values()
+}
+
+kapt {
+    correctErrorTypes = true
+}
