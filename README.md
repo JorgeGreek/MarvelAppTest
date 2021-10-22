@@ -4,7 +4,7 @@ Openbank - Mobile Test
 1) - For the operation of the app it is required to attach a file called secret.properties in the app folder
 where there should be only two variables called
 
-MARVEL_API_KEY = here public key from marvel site
+MARVEL_API_KEY = here public key from marvel site  
 MARVEL_PRIVATE_KEY = here private key from marvel site
 
 2) - DESCRIPTION  
