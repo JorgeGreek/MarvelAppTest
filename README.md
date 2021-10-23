@@ -1,6 +1,9 @@
 # marvelOpenBankTest
 Openbank - Mobile Test
 
+I WOULD LIKE TO INFORM YOU THAT THE APPLICATION HAS BEEN DEVELOPED IN THE LATEST VERSIONS OF ANDROIDSTUDIO AND IN LIBRARIES.
+THIS MAY REQUIRE UPDATING.
+
 1) - For the operation of the app it is required to attach a file called secret.properties in the app folder
 where there should be only two variables called
 
