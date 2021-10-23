@@ -4,8 +4,7 @@ Openbank - Mobile Test
 I WOULD LIKE TO INFORM YOU THAT THE APPLICATION HAS BEEN DEVELOPED IN THE LATEST VERSIONS OF ANDROIDSTUDIO AND IN LIBRARIES.
 THIS MAY REQUIRE UPDATING.
 
-1) - For the operation of the app it is required to attach a file called secret.properties in the app folder
-where there should be only two variables called
+1) - For the operation of the application it is required to write the apikeys in the file called secret.properties in the app folder
 
 MARVEL_API_KEY = here public key from marvel site  
 MARVEL_PRIVATE_KEY = here private key from marvel site
